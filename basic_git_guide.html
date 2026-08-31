@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git & GitHub Codespaces Guide — ISE 2530</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+        line-height: 1.6;
+        color: #222;
+      }
+
+      h1 {
+        color: #b31b1b;
+        margin-bottom: 6px;
+      }
+
+      h2 {
+        margin-top: 32px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+      }
+
+      h3 {
+        margin-top: 22px;
+      }
+
+      .subtitle {
+        color: #555;
+        margin-top: 0;
+      }
+
+      .note {
+        background: #f7f7f7;
+        border-left: 4px solid #b31b1b;
+        padding: 12px 14px;
+        margin: 16px 0;
+      }
+
+      .recommended {
+        background: #f7f7f7;
+        border: 1px solid #ddd;
+        border-left: 5px solid #b31b1b;
+        padding: 14px 16px;
+        margin: 18px 0;
+        border-radius: 6px;
+      }
+
+      code {
+        background: #f1f1f1;
+        padding: 2px 5px;
+        border-radius: 4px;
+      }
+
+      pre {
+        background: #1f1f1f;
+        color: #f5f5f5;
+        padding: 12px 14px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+
+      pre code {
+        background: transparent;
+        color: inherit;
+        padding: 0;
+        border-radius: 0;
+        font-family: Consolas, "Courier New", monospace;
+      }
+
+      .flow {
+        font-weight: bold;
+        text-align: center;
+        padding: 12px;
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin: 14px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 9px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #f5f5f5;
+      }
+
+      a {
+        color: #8b1515;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Git & GitHub Codespaces Guide</h1>
+    <p class="subtitle">ISE 2530 Course Project</p>
+
+    <div class="recommended">
+      <strong>Recommended:</strong>
+      Use <strong>GitHub Codespaces</strong> for this course. Codespaces allows
+      you to work on the project entirely in your browser without installing
+      Git, Python, or VS Code on your computer.
+    </div>
+
+    <h2>What is Git?</h2>
+
+    <p>
+      Git is a version-control tool used to keep track of changes made to
+      project files. It allows multiple team members to contribute to the same
+      project while maintaining a history of changes.
+    </p>
+
+    <p>
+      Your team's project is stored in a GitHub repository. Each team member can
+      make changes and then share those changes with the team.
+    </p>
+
+    <div class="flow">Pull → Edit → Save → Commit → Push</div>
+
+    <h2>Option 1 — GitHub Codespaces (Recommended)</h2>
+
+    <p>
+      GitHub Codespaces provides a browser-based VS Code environment connected
+      directly to your team's GitHub repository.
+    </p>
+
+    <p>You do not need to install:</p>
+
+    <ul>
+      <li>Git</li>
+      <li>VS Code</li>
+      <li>Python locally</li>
+      <li>Course dependencies locally</li>
+    </ul>
+
+    <h3>1. Open Your Team Repository</h3>
+
+    <p>Open the GitHub repository assigned to your team.</p>
+
+    <h3>2. Create a Codespace</h3>
+
+    <ol>
+      <li>Click the green <strong>Code</strong> button.</li>
+      <li>Select the <strong>Codespaces</strong> tab.</li>
+      <li>Click <strong>Create codespace</strong>.</li>
+      <li>Wait for the environment to load.</li>
+    </ol>
+
+    <p>
+      A browser-based VS Code window will open with the project files already
+      available.
+    </p>
+
+    <div class="note">
+      Each team member may use their own Codespace connected to the same team
+      repository. You do not need to share one Codespace.
+    </div>
+
+    <h3>3. Get the Latest Team Changes</h3>
+
+    <p>
+      Before beginning work, open the terminal inside your Codespace and run:
+    </p>
+
+    <pre><code>git pull</code></pre>
+
+    <p>This downloads changes that your teammates have already pushed.</p>
+
+    <h3>4. Edit Your Files</h3>
+
+    <p>
+      Use the file explorer on the left side of VS Code to open and edit your
+      assigned files.
+    </p>
+
+    <p>For Milestone 1, your team will mainly work with:</p>
+
+    <pre><code>milestone_1/
+├── dataset.xlsx
+├── project_proposal.md
+├── dataset_description.md
+├── data_dictionary.md
+├── decision_definition.md
+└── feasibility_preview.md</code></pre>
+
+    <p>
+      Save your file using <code>Ctrl + S</code> or
+      <strong>File → Save</strong>.
+    </p>
+
+    <h3>5. Check What You Changed</h3>
+
+    <pre><code>git status</code></pre>
+
+    <p>Git will show the files you modified or added.</p>
+
+    <h3>6. Add Your Changes</h3>
+
+    <p>Add all changed files:</p>
+
+    <pre><code>git add .</code></pre>
+
+    <p>Or add one specific file:</p>
+
+    <pre><code>git add milestone_1/project_proposal.md</code></pre>
+
+    <h3>7. Commit Your Changes</h3>
+
+    <p>A commit records a snapshot of your work.</p>
+
+    <pre><code>git commit -m "Complete project proposal"</code></pre>
+
+    <p>Use a short message that explains what you completed.</p>
+
+    <p>Good examples:</p>
+
+    <pre><code>git commit -m "Add dataset description"
+git commit -m "Complete data dictionary"
+git commit -m "Revise recurring decision"
+git commit -m "Complete feasibility preview"</code></pre>
+
+    <h3>8. Push Your Changes</h3>
+
+    <p>Push the committed work to the team's GitHub repository:</p>
+
+    <pre><code>git push</code></pre>
+
+    <p>Your teammates can now receive your changes by running:</p>
+
+    <pre><code>git pull</code></pre>
+
+    <h2>Example — Three Students Working Together</h2>
+
+    <p>Suppose a three-person team divides Milestone 1 work like this:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Example Responsibility</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Student A</td>
+          <td>project_proposal.md</td>
+        </tr>
+
+        <tr>
+          <td>Student B</td>
+          <td>dataset_description.md and data_dictionary.md</td>
+        </tr>
+
+        <tr>
+          <td>Student C</td>
+          <td>decision_definition.md and feasibility_preview.md</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Student A might do:</p>
+
+    <pre><code>git pull
+
+# Edit project_proposal.md
+
+git status
+git add .
+git commit -m "Complete project proposal"
+git push</code></pre>
+
+    <p>Before Student B continues working, Student B should run:</p>
+
+    <pre><code>git pull</code></pre>
+
+    <p>Student B will now have Student A's latest committed work.</p>
+
+    <h2>Using VS Code Source Control Instead of Commands</h2>
+
+    <p>
+      You can also perform Git operations using the
+      <strong>Source Control</strong> icon on the left side of your Codespace.
+    </p>
+
+    <ol>
+      <li>Open <strong>Source Control</strong>.</li>
+      <li>Review the files you changed.</li>
+      <li>Stage your changes.</li>
+      <li>Enter a commit message.</li>
+      <li>Click <strong>Commit</strong>.</li>
+      <li>Click <strong>Sync Changes</strong> or <strong>Push</strong>.</li>
+    </ol>
+
+    <p>You may use either the terminal commands or the VS Code interface.</p>
+
+    <h2>Avoiding Merge Conflicts</h2>
+
+    <p>
+      Try not to have multiple team members independently edit the same part of
+      the same file at the same time.
+    </p>
+
+    <p>Always begin your work with:</p>
+
+    <pre><code>git pull</code></pre>
+
+    <p>And finish meaningful work with:</p>
+
+    <pre><code>git add .
+git commit -m "Describe your changes"
+git push</code></pre>
+
+    <div class="note">
+      <strong>If Git reports a merge conflict:</strong>
+      do not delete another team member's work simply to make the error
+      disappear. Review the conflicting changes together and determine what the
+      final content should contain.
+    </div>
+
+    <h2>Typical Codespaces Workflow</h2>
+
+    <div class="flow">
+      Open Codespace → Pull → Edit → Save → Add → Commit → Push
+    </div>
+
+    <pre><code>git pull
+
+# Edit and save your project files
+
+git status
+git add .
+git commit -m "Describe your changes"
+git push</code></pre>
+
+    <h2>Option 2 — Work Locally</h2>
+
+    <p>
+      If you prefer to work on your own computer instead of using Codespaces,
+      you may install Git and clone the repository locally.
+    </p>
+
+    <h3>1. Install Git</h3>
+
+    <p><strong>Windows:</strong></p>
+
+    <ol>
+      <li>
+        Go to
+        <a href="https://git-scm.com/download/win"> git-scm.com/download/win </a
+        >.
+      </li>
+      <li>Download and run the installer.</li>
+      <li>The default installer options are normally sufficient.</li>
+    </ol>
+
+    <p><strong>macOS:</strong></p>
+
+    <p>Open Terminal and run:</p>
+
+    <pre><code>git --version</code></pre>
+
+    <p>
+      If Git is unavailable, macOS may prompt you to install the required
+      developer tools.
+    </p>
+
+    <p>Verify the installation:</p>
+
+    <pre><code>git --version</code></pre>
+
+    <h3>2. Clone Your Team Repository</h3>
+
+    <p>Copy the repository URL from your team's GitHub page and run:</p>
+
+    <pre><code>git clone YOUR_TEAM_REPOSITORY_URL</code></pre>
+
+    <p>Then enter the repository:</p>
+
+    <pre><code>cd YOUR_REPOSITORY_FOLDER</code></pre>
+
+    <div class="note">
+      Do not clone another team's repository or use the instructor starter
+      repository as your working submission. Use the repository assigned to your
+      team.
+    </div>
+
+    <h3>3. Use the Same Git Workflow</h3>
+
+    <p>After cloning, the normal workflow is the same:</p>
+
+    <pre><code>git pull
+
+# Edit files
+
+git status
+git add .
+git commit -m "Describe your changes"
+git push</code></pre>
+
+    <h2>Important Rules</h2>
+
+    <ul>
+      <li>Run <code>git pull</code> before beginning new work.</li>
+
+      <li>Use clear commit messages that describe what you changed.</li>
+
+      <li>Commit after completing a meaningful piece of work.</li>
+
+      <li>Push your commits so your teammates can access them.</li>
+
+      <li>Avoid editing the same section of the same file simultaneously.</li>
+
+      <li>Do not create additional branches unless instructed.</li>
+
+      <li>Do not delete another student's work to resolve a conflict.</li>
+
+      <li>
+        Make sure your final work appears in the team repository on GitHub.
+      </li>
+    </ul>
+
+    <h2>Remember</h2>
+
+    <div class="flow">PULL → EDIT → SAVE → ADD → COMMIT → PUSH</div>
+
+    <p>
+      Your changes are not fully shared with your team until they have been
+      <strong>committed and pushed to GitHub</strong>.
+    </p>
+  </body>
+</html>
