@@ -8,6 +8,10 @@ data/processed/*
 !data/processed/.gitkeep
 milestone_2/outputs/*
 !milestone_2/outputs/.gitkeep
+
+# Day 18 practice code is tracked; only generated practice databases are ignored.
+practice_session/**/*.db
+
 .venv/
 venv/
 .vscode/
